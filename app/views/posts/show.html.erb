@@ -1,0 +1,19 @@
+
+<div class="container">
+  <h1>Post</h1>
+  <div class="panel panel-primary" style="padding:1%;">
+    <div class="panel-head">
+      <p id="notice"><%= notice %></p>
+      <%= image_tag @post.image.url(:medium) %>
+      </div>
+    <div class="panel-body">
+      <%= @post.title %><hr>
+      <%= @post.msg %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Düzenle', edit_post_path(@post),:class => 'btn-link' %> |
+      <%= link_to 'Ana Sayfa', posts_path,:class => 'btn-link' %>
+    </div>
+  </div>
+
+</div>

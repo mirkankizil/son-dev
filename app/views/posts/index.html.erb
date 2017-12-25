@@ -1,0 +1,22 @@
+<div class='container'>
+<p id="notice"><%= notice %></p>
+
+<h1>Post lar</h1>
+<% @posts.each do |post| %>
+<div class="panel panel-primary" style="padding:1%;">
+  <div class="panel-head">
+    <%= image_tag post.image.url(:thumb) if post.image? %>
+  </div>
+  <div class="panel-body">
+    <%= post.title %><hr>
+    <%= post.msg %>
+  </div>
+  <div class="panel-footer">
+    <%= link_to 'Göster', post, :class => 'btn-link' %> | 
+    <%= link_to 'Düzenle', edit_post_path(post), :class => 'btn-link' %> | 
+    <%= link_to 'Sil', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn-link' %>
+  </div>
+</div>
+<% end %>
+<%= link_to 'Yeni Post', new_post_path,:class => 'btn-link' %>
+</div>
